@@ -4,12 +4,12 @@ from django.urls import path, include
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
 
-import basemodel
+from basemodel.views import * 
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
-router.register(r'users', basemodel.views.UserViewSet)
-router.register(r'groups', basemodel.views.GroupViewSet)
+router.register(r'users', UserViewSet)
+router.register(r'groups', GroupViewSet)
 
 # Added/
 
@@ -33,6 +33,8 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+    # path('invoice/', include('invoice.urls')),
+
     path('admin/', admin.site.urls),
 
     path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
