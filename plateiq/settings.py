@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Added
     'basemodel',
-    # 'customer',
+    'customer',
     # 'invoice',
     'rest_framework',
     # Added/
