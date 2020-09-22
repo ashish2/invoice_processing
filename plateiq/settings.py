@@ -15,12 +15,12 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 from django import forms
-from uploads.core.models import Document
+# from uploads.core.models import Document
 
-class DocumentForm(forms.ModelForm):
-    class Meta:
-        model = Document
-        fields = ('description', 'document', )
+# class DocumentForm(forms.ModelForm):
+#     class Meta:
+#         model = Document
+#         fields = ('description', 'document', )
 
 
 # Quick-start development settings - unsuitable for production

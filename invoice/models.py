@@ -7,7 +7,7 @@ from customer.models import Customer
 class Invoice(BaseModel):
 	# Invoice File Model
 	name = models.CharField(max_length=256)
-	path = models.FileField(upload_to='uploads/')
+	path = models.FileField(upload_to='documents/%Y/%m/%d/')
 	extension = models.CharField(max_length=32)
 	customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
@@ -27,13 +27,13 @@ class InvoiceDetails(BaseModel):
 	# Invoice Details Model
 	invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE)
 	number = models.IntegerField() # Invoice Number
-	vendor_id = models.ForeignKey(Vendor)
-	purchaser_id = models.ForeignKey(Purchaser)
+	vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE)
+	purchaser_id = models.ForeignKey(Purchaser, on_delete=models.CASCADE)
 	date =  models.DateTimeField() # Invoice Date
 
 class LineItems(BaseModel):
 	# Line Item Details model
-	invoicedetails = models.ForeignKey(InvoiceDetails)
+	invoicedetails = models.ForeignKey(InvoiceDetails, on_delete=models.CASCADE)
 	description = models.CharField(max_length=256)
 	quantity = models.IntegerField()
 	unit_amount = models.FloatField()
@@ -44,7 +44,7 @@ class LineItems(BaseModel):
 # 	lineItems_id
 
 class Invoice_OtherStatus(BaseModel):
-	invoice = models.OneToOneField()
+	invoice = models.OneToOneField(InvoiceDetails, on_delete=models.CASCADE, primary_key=True)
 	processing = models.BooleanField()
 	processed =  models.BooleanField()
 	digitizing = models.BooleanField()
