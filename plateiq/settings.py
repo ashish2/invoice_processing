@@ -14,6 +14,13 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+from django import forms
+from uploads.core.models import Document
+
+class DocumentForm(forms.ModelForm):
+    class Meta:
+        model = Document
+        fields = ('description', 'document', )
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,7 +41,7 @@ INSTALLED_APPS = [
     # Added
     'basemodel',
     'customer',
-    # 'invoice',
+    'invoice',
     'rest_framework',
     # Added/
 
