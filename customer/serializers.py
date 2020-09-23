@@ -4,7 +4,7 @@ from rest_framework import serializers
 from .models import *
 # from basemodel.views import UserViewSet
 
-class CustomerSerializer(serializers.HyperlinkedModelSerializer):
+class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         # fields = ['url', 'username', 'email', 'groups']
