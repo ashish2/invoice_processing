@@ -18,4 +18,5 @@ Invoice processing
 	4. Create InvoiceDetails entry from the PDF file - attach to Invoice Object
 	5. Create LineItem Entries of the Invoice from PDF - attach to Invoice
 	6. Create Invoice_OtherStatus entry of the the Invoice - attach to Invoice
+	7. Marking the Invoice_OtherStatus entry of the Invoice to Any (Processing,Digitzed etc) or All of the options
 
