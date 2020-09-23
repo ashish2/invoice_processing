@@ -19,19 +19,13 @@ from . import views
 
 router = routers.DefaultRouter()
 # router.register(r'invoice/', views.InvoiceViewSet)
-
 router.register(r'invoice', views.InvoiceViewSet, basename="invoice")
 router.register(r'vendor', views.VendorViewSet, basename="vendor")
 router.register(r'purchaser', views.PurchaserViewSet, basename="purchaser")
 router.register(r'invoicedetails', views.InvoiceDetailsViewSet, basename="invoicedetails")
 router.register(r'lineitems', views.LineItemsViewSet, basename="lineitems")
 router.register(r'invoice_otherstatus', views.Invoice_OtherStatusViewSet, basename="invoice_otherstatus")
-# router.register(r'invoice', views.InvoiceViewSet)
 
 urlpatterns = [
-    # path('invoice/', include('invoice.urls')),
-
-    # path('admin/', admin.site.urls),
-    # path(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('', include(router.urls) )
 ]

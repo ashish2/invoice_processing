@@ -31,9 +31,12 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Added
+    # 'basemodel.apps.BasemodelConfig',
     'basemodel',
     'customer',
     'invoice',
+    # 'basemodel.apps.BasemodelConfig',
+    # 'customer.apps.CustomerConfig',
     # 'invoice.apps.InvoiceConfig',
     'rest_framework',
     # Added/
