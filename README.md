@@ -1,7 +1,7 @@
 # invoice_processing
 Invoice processing
 
-### Create an Invoice Object
+### Command 1: Create an Invoice Object
 curl 'http://localhost:8000/invoice/invoice/' \
   -X 'POST' \
   -H 'Connection: keep-alive' \
@@ -23,4 +23,13 @@ curl 'http://localhost:8000/invoice/invoice/' \
 
 
 
+# Steps to Follow:
+	Create User
+	Create Customer - attach to the User
+	Upload a PDF File as Invoice (Above: Command 1) - attach to Customer
+	Create a Vendor
+	Create a Purchaser Object
+	Create InvoiceDetails entry from the PDF file - attach to Invoice Object
+	Create LineItem Entries of the Invoice from PDF - attach to Invoice
+	Create Invoice_OtherStatus entry of the the Invoice - attach to Invoice
 
