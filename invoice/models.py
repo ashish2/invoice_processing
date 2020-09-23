@@ -35,7 +35,7 @@ class LineItems(BaseModel):
 	# Line Item Details model
 	invoicedetails = models.ForeignKey(InvoiceDetails, on_delete=models.CASCADE)
 	description = models.CharField(max_length=256)
-	quantity = models.IntegerField()
+	quantity = models.FloatField()
 	unit_amount = models.FloatField()
 	total = models.FloatField()
 
@@ -44,12 +44,9 @@ class LineItems(BaseModel):
 # 	lineItems_id
 
 class Invoice_OtherStatus(BaseModel):
-	invoice = models.OneToOneField(InvoiceDetails, on_delete=models.CASCADE, primary_key=True)
+	invoicedetails = models.OneToOneField(InvoiceDetails, on_delete=models.CASCADE)
 	processing = models.BooleanField()
 	processed =  models.BooleanField()
 	digitizing = models.BooleanField()
 	digitized = models.BooleanField()
-
-
-
 
