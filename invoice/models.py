@@ -44,7 +44,7 @@ class LineItems(BaseModel):
 # 	lineItems_id
 
 class Invoice_OtherStatus(BaseModel):
-	invoicedetails = models.OneToOneField(InvoiceDetails, on_delete=models.CASCADE)
+	invoice = models.OneToOneField(Invoice, on_delete=models.CASCADE)
 	processing = models.BooleanField()
 	processed =  models.BooleanField()
 	digitizing = models.BooleanField()
